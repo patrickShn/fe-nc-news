@@ -1,16 +1,18 @@
-import { useDeferredValue, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 
 import {Routes, Route} from 'react-router-dom'
 
-import ArticlesList from './ArticlesList'
+import ArticlesList from './ArticlesFeed/ArticlesList'
 
-// import { useContext } from "react";
-// import { ArticlesContext } from "./context/articlesContext";
+import NavBar from "./navBar/NavBar";
+
+import ChosenArticlePage from "./chosenArticlePage/ChosenArticlePage";
 
 
 export default function AppManager () {
     const [articles, setArticles] = useState()
-
+    const [chosenArticleId, setChosenArticleId] = useState("")
+console.log(chosenArticleId)
     useEffect(() => {
         const fetchAllArticles = async () => {
             const articleQuery = await fetch(`https://be-nc-news-famm.onrender.com/api/articles`) 
@@ -18,14 +20,18 @@ export default function AppManager () {
             setArticles(response.articles)
         }
         fetchAllArticles()
-    },[])
+    },[setChosenArticleId])
 
     return (
-        // <Routes>
-        //     <Route path="/" element={
-            <ArticlesList articles={articles}/>
-        //     }/>
-        // </Routes>
+        <>
+        <NavBar/>
+        <Routes>
+            <Route path="/" element={
+                <ArticlesList articles={articles} setChosenArticleId={setChosenArticleId}/>
+            }/> 
+        <Route path={`/articles/${chosenArticleId.article_id}`} element={<ChosenArticlePage chosenArticleId={chosenArticleId}/>}/>
+         </Routes> 
+            </>
 
     )
 }
