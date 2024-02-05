@@ -62,3 +62,26 @@ img {
 .ArticleBodyImg {
     display: block;
 }
+
+.commentsContainer{
+    background-color: rgb(75, 75, 75);
+    border-radius: 30px;
+    display: block
+
+}
+
+.commentDiv {
+    margin: 20px;
+    margin-left: 15%;
+    background-color: rgb(189, 189, 189);
+    color: rgb(88, 0, 0);
+    border: 3px solid rgb(196, 196, 196);
+    border-radius: 20px;
+   display: block;
+   min-width: fit-content;
+}
+
+.commentDiv > li {
+    min-width: 1000px;
+    max-width: 1000px;
+}
