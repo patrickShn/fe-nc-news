@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import ChosenArticleDisplay from "./ChosenArticleDisplay";
+import CommentsManager from "./commentsManager";
 
 export default function ChosenArticlePage ({chosenArticleId}) {
 
@@ -17,7 +18,10 @@ export default function ChosenArticlePage ({chosenArticleId}) {
     
 
     return (
+        <>
             <ChosenArticleDisplay chosenArticleData={chosenArticleData}/>
+            <CommentsManager chosenArticleId={chosenArticleId.article_id}/>
+        </>
             
         
     )

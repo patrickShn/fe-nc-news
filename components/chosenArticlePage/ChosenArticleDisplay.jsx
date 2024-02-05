@@ -10,7 +10,6 @@ export default function ChosenArticleDisplay ({chosenArticleData}){
         )
     }
 
-console.log(chosenArticleData)
             const {author, title, article_img_url} = chosenArticleData.articles
     return (
         <>
