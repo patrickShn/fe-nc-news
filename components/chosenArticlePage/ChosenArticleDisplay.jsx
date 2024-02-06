@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom'
 
-import { ChosenArticlesContext } from '../context/ChosenarticlesContext'
+import { ChosenArticleContext } from '../context/ChosenarticleContext'
 import { useContext } from 'react'
 
 export default function ChosenArticleDisplay (){
 
-    const {chosenArticleData} = useContext(ChosenArticlesContext)
+    const {chosenArticleData} = useContext(ChosenArticleContext)
 
     if (chosenArticleData.length === 0){
         return (
