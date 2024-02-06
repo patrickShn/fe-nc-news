@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import Header from './Header'
 import AppManager from './AppManager'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
