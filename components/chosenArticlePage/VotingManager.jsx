@@ -4,30 +4,31 @@ import Button from 'react-bootstrap/Button';
 import patchArticleVotes from '../../utils/patchArticleVotesByArticleId';
 
 
-export default function VotingContainer ({votes, setVotes, chosenArticleId}) {
+export default function VotingContainer ({votes, setVotes, article_id}) {
 
-    const [updateVotes, setUpdateVotes] = useState([])
+    const [updateVotes, setUpdateVotes] = useState()
     
-    const handleUpVote =  (e) => {
+    const handleVote = (e) => {
+        const voteAmedment= e.target.innerText
+        if (voteAmedment === "Upvote This Article")
         setUpdateVotes({
             inc_votes : 1
         })
-        }
-        
-        const handleDownVote = (e) => {
+        else {
             setUpdateVotes({
                 inc_votes : -1
             })
+
         }
-        
+        }
         
         useEffect(() => {
             setVotes(votes)
-        },[votes])
+        },[])
 
         useEffect(() => {
-             patchArticleVotes({votes, setVotes, chosenArticleId, updateVotes}) 
-        },[updateVotes, setVotes, chosenArticleId])
+             patchArticleVotes({votes, setVotes, article_id, updateVotes}) 
+        },[updateVotes])
 
 
 
@@ -37,8 +38,8 @@ export default function VotingContainer ({votes, setVotes, chosenArticleId}) {
             <p> Votes: {votes + 1} </p>
         </div>
         <div className="votingContainer">
-        <Button variant='success' onClick={handleUpVote}>Upvote This Article </Button>
-        <Button variant='danger' onClick={handleDownVote}> Downvote This Article  </Button>
+        <Button variant='success' onClick={handleVote}>Upvote This Article </Button>
+        <Button variant='danger' onClick={handleVote}> Downvote This Article  </Button>
         </div>
         </>
     )

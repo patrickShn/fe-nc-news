@@ -25,7 +25,7 @@ export default function AppManager () {
             <Route path="/" element={
                 <ArticlesList articles={articles} setChosenArticleId={setChosenArticleId}/>
             }/> 
-        <Route path={`/articles/${chosenArticleId.article_id}`} element={<ChosenArticlePageManager chosenArticleId={chosenArticleId}/>}/>
+        <Route path={`/articles/:article_id`} element={<ChosenArticlePageManager chosenArticleId={chosenArticleId}/>}/>
          </Routes> 
             </>
 
