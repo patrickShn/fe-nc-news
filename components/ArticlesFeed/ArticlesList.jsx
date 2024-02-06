@@ -6,7 +6,8 @@ export default function ArticlesList({articles, setChosenArticleId}) {
     return (
         <ul>
             {articles&&articles.map((article) => {
-                return <ArticlesCards article={article} setChosenArticleId={setChosenArticleId}/>
+                const {article_id} = article
+                return <ArticlesCards key={article_id} article={article} setChosenArticleId={setChosenArticleId}/>
             })}
         </ul>
     )
