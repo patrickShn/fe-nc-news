@@ -1,15 +1,13 @@
-import { useParams } from 'react-router-dom'
 import ArticlesCards from './ArticlesCards'
 
-export default function ArticlesList({articles, setChosenArticleId}) {
+export default function ArticlesList({articles}) {
 
-const {article_id} = useParams()
 
     return (
         <ul>
             {articles&&articles.map((article) => {
                 const {article_id} = article
-                return <ArticlesCards key={article_id} article={article} setChosenArticleId={setChosenArticleId}/>
+                return <ArticlesCards key={article_id} article={article} setChosenArticleId={article_id}/>
             })}
         </ul>
     )

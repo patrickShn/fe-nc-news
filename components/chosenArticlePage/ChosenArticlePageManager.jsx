@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 
 import ChosenArticleDisplay from "./ChosenArticleDisplay";
-import CommentsManager from "./commentsManager";
+import CommentsManager from "./comments/commentsManager";
 import VotingContainer from "./VotingManager";
 import { ChosenArticleContext } from "../context/ChosenarticleContext";
 
 import fetchSpecificArticle from '../../utils/fetchSpecifcArticle'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function ChosenArticlePageManager () {
 
@@ -16,6 +16,7 @@ export default function ChosenArticlePageManager () {
 
 
     const {article_id} = useParams()
+
 
 
     useEffect(() => {
@@ -36,6 +37,7 @@ export default function ChosenArticlePageManager () {
 
     return (
         <>
+            <div></div>
         <ChosenArticleContext.Provider value={{chosenArticleData}}>
             <ChosenArticleDisplay/>
             <VotingContainer votes={votes} setVotes={setVotes} article_id={article_id}/>

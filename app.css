@@ -20,6 +20,9 @@ color: rgb(180, 180, 180)
 ;
 }
 
+button {
+    display: block;
+}
 
 
 .ArticleContainer {
@@ -123,12 +126,27 @@ img {
     padding: 20px 10px;
 }
 
-input {
+textarea {
     width: 50%;
     height: 60px;
     color: black;
 }
 
-input:focus{
+textarea:focus{
     background-color: rgb(227, 229, 255);
 }
+
+.userSelectCard {
+    display: block;
+    border: 2px solid black;
+}
+
+.userImg{
+    width: 100px;
+    height:100px;
+    border: 2px solid black;
+    border-radius: 40%;
+}
+
+
+
