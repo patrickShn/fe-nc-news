@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import CommentsList from "./commentsList"
-import getCommentsForThisArticle from "../../../utils/getCommentsForThisArticle"
-import PostYourComment from "./PostYourComment"
+import CommentsList from "./commentsList/commentsList"
+import getCommentsForThisArticle from "../../../../components/utils/getCommentsForThisArticle"
+import PostYourComment from "./PostYourComment/PostYourComment"
 
 
 export default function CommentsManager ({article_id}) {

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
-import patchArticleVotes from '../../utils/patchArticleVotesByArticleId';
+import patchArticleVotesByArticleId from '../../../../components/utils/patchArticleVotesByArticleId'
 
 
-export default function VotingContainer ({votes, setVotes, article_id}) {
+export default function VotingManager ({votes, setVotes, article_id}) {
 
     const [updateVotes, setUpdateVotes] = useState()
     
@@ -27,7 +27,7 @@ export default function VotingContainer ({votes, setVotes, article_id}) {
         },[])
 
         useEffect(() => {
-             patchArticleVotes({votes, setVotes, article_id, updateVotes}) 
+             patchArticleVotesByArticleId({votes, setVotes, article_id, updateVotes}) 
         },[updateVotes])
 
 

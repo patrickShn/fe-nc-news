@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import UserContext from "../../context/UserContext"
+import UserContext from "../../../../../context/UserContext"
 import { Button } from "react-bootstrap"
-import deleteCommentFromArticle from '../../../utils/DeleteCommentFromArticle' 
+import deleteCommentFromArticle from '../../../../../components/utils/DeleteCommentFromArticle'
 
 export default function CommentsCard ({comment, hasCommentBeenDeleted,setHasCommentBeenDeleted}) {
 

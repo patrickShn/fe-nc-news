@@ -1,8 +1,5 @@
 import CommentsCards from "./CommentsCards"
 
-import UserContext from "../../context/UserContext"
-
-import { useContext } from "react"
 export default function Commentslist ({comments, hasCommentBeenDeleted, setHasCommentBeenDeleted}) {
 
     if (comments.length === 0){

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-import Swal from 'sweetalert2'
 
 export default async function PostNewCommentToArticle ({article_id, userCommentBody, loggedInUser}) {
     const invalidUser = (loggedInUser === "Select user" || userCommentBody === "")
