@@ -7,8 +7,8 @@ import Swal from 'sweetalert2'
 
 
 
-import PostNewCommentToArticle from "../../../utils/PostNewCommentToArticle"
-import UserContext from "../../context/UserContext"
+import PostNewCommentToArticle from "../../../../../components/utils/PostNewCommentToArticle"
+import UserContext from "../../../../../context/UserContext"
  
 export default function PostYourComment ({article_id, setNewComment}) {
 
@@ -26,16 +26,7 @@ export default function PostYourComment ({article_id, setNewComment}) {
                 text: 'Please select a user to post a comment',
                 icon: 'info',
               })
-        }else if (newComment === "err2"){
-            Swal.fire({
-                title: 'success!',
-                text: 'comment posted :)',
-                icon: 'success',
-              })
-            setNewComment(newComment)
-            setUserCommentBody("")
-            }
-        else{
+        }else{
         Swal.fire({
             title: 'success!',
             text: 'comment posted :)',

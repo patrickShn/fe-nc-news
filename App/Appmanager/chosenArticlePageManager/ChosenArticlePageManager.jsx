@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react"
+import {useEffect, useState } from "react"
 
-import ChosenArticleDisplay from "./ChosenArticleDisplay";
-import CommentsManager from "./comments/commentsManager";
-import VotingContainer from "./VotingManager";
-import { ChosenArticleContext } from "../context/ChosenarticleContext";
+import ChosenArticleDisplay from "./chosenArticleDisplay/ChosenArticleDisplay"
+import CommentsManager from "./comments/commentsManager"
+import VotingManager from "./voting manager/VotingManager"
+import { ChosenArticleContext } from "../../../context/ChosenarticleContext";
 
-import fetchSpecificArticle from '../../utils/fetchSpecifcArticle'
-import { Link, useParams } from "react-router-dom";
+import fetchSpecificArticle from '../../../components/utils/fetchSpecifcArticle'
+import { useParams } from "react-router-dom";
 
 export default function ChosenArticlePageManager () {
 
     const [chosenArticleData, setChosenArticleData] = useState([])
     const [votes, setVotes] = useState(0)
     const [loading, setloading] = useState(false)
+
 
 
     const {article_id} = useParams()
@@ -37,10 +38,9 @@ export default function ChosenArticlePageManager () {
 
     return (
         <>
-            <div></div>
         <ChosenArticleContext.Provider value={{chosenArticleData}}>
             <ChosenArticleDisplay/>
-            <VotingContainer votes={votes} setVotes={setVotes} article_id={article_id}/>
+            <VotingManager votes={votes} setVotes={setVotes} article_id={article_id}/>
             <CommentsManager article_id={article_id}/>
         </ChosenArticleContext.Provider>
         </>
