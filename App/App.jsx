@@ -1,15 +1,7 @@
 import Header from './Header/Header'
 import AppManager from './Appmanager/AppManager'
 
-
-
-
-
-
-
-
-function App() {
-
+function App() {  
   return (
     <>
    <Header/>

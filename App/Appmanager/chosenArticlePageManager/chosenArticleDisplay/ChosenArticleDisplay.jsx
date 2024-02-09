@@ -7,6 +7,7 @@ import UserContext from '../../../../context/UserContext'
 export default function ChosenArticleDisplay (){
 
     const {chosenArticleData} = useContext(ChosenArticleContext)
+    
 
     const {loggedInUser} = useContext(UserContext)
 
@@ -17,6 +18,10 @@ export default function ChosenArticleDisplay (){
             </div>
         )
     }
+
+    setTimeout(() => {
+        
+    })
 
             const {author, title, article_img_url} = chosenArticleData.articles
     return (

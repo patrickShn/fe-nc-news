@@ -8,14 +8,16 @@ export default function LandingPage (){
 
 
     return (
-        <>
-        <h2> you're on the the landing page </h2>
+        <div className="landingPage">
+        <h2> Welcome!... </h2>
+        <div className="landPageBtnContainer">
         <Link to={`/${loggedInUser}/articles`}>
-        <button>Click here to see all articles</button>
+        <button className="landPgBtn">Click here to see all articles</button>
         </Link>
         <Link to={`/${loggedInUser}/users`}>
-        <button>click here to log in </button>
+        <button className="landPgBtn">click here to log in </button>
         </Link>
-        </>
+        </div>
+        </div>
     )
 }

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import CommentsList from "./commentsList/commentsList"
 import getCommentsForThisArticle from "../../../../components/utils/getCommentsForThisArticle"
 import PostYourComment from "./PostYourComment/PostYourComment"
+import ErrContext from "../../../../context/errContext"
 
 
 export default function CommentsManager ({article_id}) {
@@ -10,9 +11,11 @@ export default function CommentsManager ({article_id}) {
     const [isLoading, setIsLoading] = useState(true)
     const [hasCommentBeenDeleted, setHasCommentBeenDeleted] = useState(1)
 
+    const {setError} = useContext(ErrContext)
+
     
     useEffect(() => {
-    getCommentsForThisArticle({setComments, article_id})
+    getCommentsForThisArticle({setComments, article_id, setError})
     setTimeout(() => {
         setIsLoading(false);
       }, 5000);

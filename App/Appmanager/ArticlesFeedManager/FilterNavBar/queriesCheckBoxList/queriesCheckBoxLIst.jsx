@@ -1,16 +1,4 @@
-import { useState } from "react";
-
-
-
-export default function QueriesCheckBoxList({setQueryString, queryString, setSortDirection, sortDirection}){
-    
-    
-
-  const handleSortByChange = (e) => {
-    e.preventDefault();
-    setQueryString(e.target.value);
-  };
-
+export default function QueriesCheckBoxList({setQueryString, setSortDirection}){
   const ASCorDESC = (e) => {
     if (e.target.checked) {
       setSortDirection("DESC");
@@ -25,17 +13,9 @@ export default function QueriesCheckBoxList({setQueryString, queryString, setSor
 
   return (
     <>
-      <div className="queriesList">
-        <h4>{queryString && `sorting articles by ${queryString}`}</h4>
-        <h4>{queryString && `in ${sortDirection} order`}</h4>
-      </div>
-
       <div className="filtersListContainer">
-
-
       <fieldset>
-        <legend>Select a Query:</legend>
-
+        <h5>Sort Articles</h5>
         <div className="filterItem">
           <input
             type="radio"
@@ -54,7 +34,7 @@ export default function QueriesCheckBoxList({setQueryString, queryString, setSor
             onClick={addToQuery}
             value="comment_count"
             />
-          <label htmlFor="comment_count">Comment no.</label>
+          <label htmlFor="comment_count">Number of Comments </label>
         </div>
 
         <div className="filterItem">
@@ -67,9 +47,8 @@ export default function QueriesCheckBoxList({setQueryString, queryString, setSor
           />
           <label htmlFor="votes">Votes</label>
         </div>
-        <div className="filterItem">
-
-        Order from highest to lowest <div></div>    
+        <div className="filterItem highestToLowestBtn">
+        Order from highest to lowest <br/>
         <input
           type="checkbox"
           value="DESC"
@@ -78,7 +57,6 @@ export default function QueriesCheckBoxList({setQueryString, queryString, setSor
           />
         <br></br>
           </div>
-        <button onClick={handleSortByChange}>Apply</button>
       </fieldset>
           </div>
     </>
