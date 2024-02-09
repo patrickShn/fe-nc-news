@@ -4,23 +4,24 @@ import { Link} from 'react-router-dom';
 
 import UserCard from './UserCard'
 import UserContext from '../../../context/UserContext'
+import ErrContext from '../../../context/errContext';
 
 export default function UsersList () {
 
     const [users,setUsers] = useState("")
 
 const {loggedInUser} = useContext(UserContext)
-
+const {setError} = useContext(ErrContext)
 
     
     useEffect(()=> {
-        getAllUsers({setUsers})
+        getAllUsers({setUsers, setError})
     }, [loggedInUser])
 
 
     return (
         <>
-        <Link to={`/${loggedInUser}/articles`}>
+        <Link to={`/${loggedInUser}/articles?all`}>
             <button>Articles</button>
         </Link>
         <ul>

@@ -18,8 +18,8 @@ const {loggedInUser} = useContext(UserContext)
                 <p>Topic - {topic}</p>
                 <p> Posted @ {created_at.toLocaleString()}</p>
                 <p> comments (view all {comment_count})</p>
-                <p>Votes :  {votes}</p>
-                <img src={article_img_url} alt={`${title} s profile picture`}/>
+                <p>Votes :  {votes + 1}</p>
+                <img src={article_img_url} alt={`Image relating to ${title}`}/>
             </li>
             </Link>
         </div>

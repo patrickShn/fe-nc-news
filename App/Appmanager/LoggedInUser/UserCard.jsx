@@ -10,14 +10,7 @@ export default function UserCard ({userInfo}) {
     
     const {setLoggedInUser, loggedInUser} = useContext(UserContext)
     const {username,avatar_url} = userInfo
-    
 
-
-    
-    
-    
-    
-    
     const handleSwitchUser = (e) => {
         if (username === loggedInUser ){
             alert(`you're already logged in as ${username}`)

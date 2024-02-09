@@ -9,28 +9,30 @@ import Swal from 'sweetalert2'
 
 import PostNewCommentToArticle from "../../../../../components/utils/PostNewCommentToArticle"
 import UserContext from "../../../../../context/UserContext"
+import ErrContext from "../../../../../context/errContext"
  
 export default function PostYourComment ({article_id, setNewComment}) {
 
     const [userCommentBody, setUserCommentBody] = useState("")
 
     const {loggedInUser} = useContext(UserContext)
+    const {setError} = useContext(ErrContext)
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const newComment = await PostNewCommentToArticle({article_id, userCommentBody, loggedInUser})
+        const newComment = await PostNewCommentToArticle({article_id, userCommentBody, loggedInUser, setError})
         if (newComment === "err"){
             Swal.fire({
                 title: 'Invalid',
-                text: 'Please select a user to post a comment',
+                text: 'Please select a user to post a comment, if you have selected a user please add a body to the comment',
                 icon: 'info',
               })
         }else{
         Swal.fire({
             title: 'success!',
             text: 'comment posted :)',
-            icon: 'success',
+            icon: '',
           })
         setNewComment(newComment)
         setUserCommentBody("")
