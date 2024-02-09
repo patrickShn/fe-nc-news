@@ -9,5 +9,10 @@ The clone uses a custom-built server. Link to this repo [https://github.com/patr
 
 node version : v20.10.0
 
-Getting Started : 
+ ## Getting Started 
+ git clone <repo-url>
+ cd fe-nc-news
+ npm i 
+ to run locally --> npm run dev
+
 
